@@ -1,6 +1,6 @@
 %{
 # include "roman.tab.h"
-void yyerror(char *s);
+void yyerror();
 %}
 
 NUMERAL I|V|X|L|C|D|M|\n

@@ -3,7 +3,7 @@
 #  include <stdlib.h>
 #  include <string.h>
 int yylex();
-int yyerror();
+void yyerror();
 
 int values[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 char* numerals[] = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
@@ -60,7 +60,7 @@ value: value term { if ($1+$2 >= 1000 & $1 < 1000) {yyerror();}
                     else {yyerror();}
             	    }
  | OB exp CB { $$ = $2; }
- | OB exp {yyerror ("syntax error\n");}
+ | OB exp {yyerror ();}
  | term {$$ = $1;}
 ;
 
@@ -102,7 +102,7 @@ int main()
   return 0;
 }
 
-int yyerror()
+void yyerror()
 {
   fprintf(stderr, "syntax error\n");
   exit(0);

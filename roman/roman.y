@@ -2,7 +2,7 @@
 #  include <stdio.h>
 #  include <stdlib.h>
 int yylex();
-int yyerror();
+void yyerror();
 %}
 
 /* declare tokens */
@@ -64,7 +64,7 @@ int main()
   return 0;
 }
 
-int yyerror()
+void yyerror()
 {
   fprintf(stderr, "syntax error\n");
   exit(0);

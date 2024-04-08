@@ -1,6 +1,6 @@
 %{
 # include "romcalc.tab.h"
-void yyerror(char *s);
+void yyerror();
 %}
 
 NUMERAL Z|I|V|X|L|C|D|M|\n
